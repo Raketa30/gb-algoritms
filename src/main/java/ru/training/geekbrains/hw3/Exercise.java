@@ -23,8 +23,11 @@ public class Exercise {
     }
 
     public static int findNumber(int[] numbers) {
-        if (numbers.length == 0 || numbers.length == 1) {
+        if (numbers.length == 0 || numbers.length == 1 || numbers[0] != 1) {
             return 1;
+        }
+        if(numbers[numbers.length - 1] == numbers.length) {
+            return numbers[numbers.length - 1] + 1;
         }
 
         int first = 0;
@@ -32,7 +35,18 @@ public class Exercise {
         int middle = (first + last) / 2;
 
         while (first <= last) {
-
+            if (numbers[middle] == middle + 1) {
+                first = middle;
+                if (numbers[first] + 2 == numbers[last]) {
+                    return numbers[first] + 1;
+                }
+            } else if (numbers[middle] == middle + 2) {
+                last = middle;
+                if (numbers[last] - 2 == numbers[first]) {
+                    return numbers[last] - 1;
+                }
+            }
+            middle = (first + last) / 2;
         }
         return 1;
     }
@@ -44,7 +58,7 @@ public class Exercise {
         Random random = new Random();
         int[] arr = new int[size];
 
-        int randomIndex = random.nextInt(size);
+        int randomIndex = random.nextInt(size + 1);
         int counter = 1;
         for (int i = 0; i < size; i++) {
             if (i == randomIndex) {
