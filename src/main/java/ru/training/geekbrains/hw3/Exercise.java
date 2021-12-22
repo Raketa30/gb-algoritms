@@ -8,11 +8,9 @@ public class Exercise {
 
 
     public static void main(String[] args) {
-        int size = 0;
-
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {
-                size = scanner.nextInt();
+                int size = scanner.nextInt();
                 int[] numbers = initArr(size);
                 System.out.println(Arrays.toString(numbers));
                 System.out.println(findNumber(numbers));
