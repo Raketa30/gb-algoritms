@@ -1,4 +1,4 @@
-package ru.training.geekbrains;
+package ru.training.geekbrains.hw2;
 
 import java.util.Arrays;
 import java.util.Random;

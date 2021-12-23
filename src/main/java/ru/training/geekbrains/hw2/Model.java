@@ -1,4 +1,4 @@
-package ru.training.geekbrains;
+package ru.training.geekbrains.hw2;
 
 public enum Model {
     LENUVO(5),
