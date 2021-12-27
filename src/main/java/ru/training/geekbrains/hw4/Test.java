@@ -1,6 +1,5 @@
 package ru.training.geekbrains.hw4;
 
-
 public class Test {
     public static void main(String[] args) {
         System.out.println("\nlist---------------");
@@ -25,7 +24,8 @@ public class Test {
     }
 
     private static void testList() {
-        IList<String> numbers = new ArrayListIm<>();
+        IList<String> numbers = new LinkedListIm<>();
+//        IList<String> numbers = new ArrayListIm<>();
         System.out.println(numbers.size());
         for (int i = 1; i < 25; i++) {
             numbers.add(String.valueOf(i));
@@ -41,6 +41,10 @@ public class Test {
         System.out.println(numbers.contains("14"));
         System.out.println(numbers);
         System.out.println(numbers.size());
+
+        for (String s : numbers) {
+            System.out.print(s + " ");
+        }
     }
 
     private static void testStack() {

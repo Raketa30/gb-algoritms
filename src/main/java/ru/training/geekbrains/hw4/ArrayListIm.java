@@ -53,16 +53,16 @@ public class ArrayListIm<E> implements IList<E> {
     @Override
     public Iterator<E> iterator() {
         return new Iterator<E>() {
-            private int cursor = 0;
+            private int cursor;
 
             @Override
             public boolean hasNext() {
-                return false;
+                return cursor < size;
             }
 
             @Override
             public E next() {
-                return null;
+                return (E) objects[cursor++];
             }
         };
     }

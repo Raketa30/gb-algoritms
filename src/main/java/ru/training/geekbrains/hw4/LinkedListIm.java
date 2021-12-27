@@ -61,14 +61,16 @@ public class LinkedListIm<E> implements IList<E>, IDeque<E> {
     @Override
     public Iterator<E> iterator() {
         return new Iterator<E>() {
+            private int cursor;
+
             @Override
             public boolean hasNext() {
-                return false;
+                return cursor < size;
             }
 
             @Override
             public E next() {
-                return null;
+                return node(cursor++).item;
             }
         };
     }
